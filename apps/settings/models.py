@@ -5,6 +5,8 @@ class Setting(models.Model):
     title = models.CharField(max_length=250)
     decription = models.TextField()
     logo = models.ImageField(upload_to = 'logo/')
+    tel = models.CharField(max_length=255)
+    email = models.EmailField()
     facebook = models.CharField(max_length=255)
     twitter = models.CharField(max_length=255)
     instagram = models.CharField(max_length=255)
