@@ -1,4 +1,6 @@
 from calendar import c
+from email.policy import default
+from tabnanny import verbose
 from django.db import models
 from apps.categories.models import Category
 
@@ -32,6 +34,7 @@ class Product(models.Model):
     description = models.TextField()
     count = models.IntegerField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title 
@@ -39,3 +42,14 @@ class Product(models.Model):
     class Meta:
         verbose_name = "Продукт"
         verbose_name_plural = "Продукты"
+
+class ProductImage(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="product_image", null=True)
+    product_image = models.ImageField(upload_to = "product_image/", null = True, blank = True)
+
+    def __str__(self):
+        return self.product_image
+
+    class Meta:
+        verbose_name = "Картинка продукта"
+        verbose_name_plural = "Картинки продуктов"

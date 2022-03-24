@@ -374,7 +374,7 @@
                                                 <div class="swiper-wrapper">
                                                     <div class="swiper-slide">
                                                         <div class="product__media--preview__items">
-                                                            <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="assets/img/product/big-product1.webp"><img class="product__media--preview__items--img" src="assets/img/product/big-product1.webp" alt="product-media-img"></a>
+                                                            <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="assets/img/product/big-product1.webp"><img class="product__media--preview__items--img" src="{{ product.main_product_image.url }}" alt="product-media-img"></a>
                                                             <div class="product__media--view__icon">
                                                                 <a class="product__media--view__icon--link glightbox" href="assets/img/product/big-product1.webp" data-gallery="product-media-preview">
                                                                     <svg class="product__media--view__icon--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="22.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path></svg>
@@ -383,95 +383,31 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    {% for image in product.product_image.all %}
                                                     <div class="swiper-slide">
                                                         <div class="product__media--preview__items">
-                                                            <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="assets/img/product/big-product2.webp"><img class="product__media--preview__items--img" src="assets/img/product/big-product2.webp" alt="product-media-img"></a>
+                                                            <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="{{ image.product_image.url }}"><img class="product__media--preview__items--img" src="{{ image.product_image.url }}" alt="product-media-img"></a>
                                                             <div class="product__media--view__icon">
-                                                                <a class="product__media--view__icon--link glightbox" href="assets/img/product/big-product2.webp" data-gallery="product-media-preview">
+                                                                <a class="product__media--view__icon--link glightbox" href="{{ image.product_image.url }}" data-gallery="product-media-preview">
                                                                     <svg class="product__media--view__icon--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="22.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path></svg>
                                                                     <span class="visually-hidden">Media Gallery</span>
                                                                 </a>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="swiper-slide">
-                                                        <div class="product__media--preview__items">
-                                                            <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="assets/img/product/big-product3.webp"><img class="product__media--preview__items--img" src="assets/img/product/big-product3.webp" alt="product-media-img"></a>
-                                                            <div class="product__media--view__icon">
-                                                                <a class="product__media--view__icon--link glightbox" href="assets/img/product/big-product3.webp" data-gallery="product-media-preview">
-                                                                    <svg class="product__media--view__icon--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="22.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path></svg>
-                                                                    <span class="visually-hidden">Media Gallery</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="swiper-slide">
-                                                        <div class="product__media--preview__items">
-                                                            <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="assets/img/product/big-product4.webp"><img class="product__media--preview__items--img" src="assets/img/product/big-product4.webp" alt="product-media-img"></a>
-                                                            <div class="product__media--view__icon">
-                                                                <a class="product__media--view__icon--link glightbox" href="assets/img/product/big-product4.webp" data-gallery="product-media-preview">
-                                                                    <svg class="product__media--view__icon--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="22.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path></svg>
-                                                                    <span class="visually-hidden">Media Gallery</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="swiper-slide">
-                                                        <div class="product__media--preview__items">
-                                                            <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="assets/img/product/big-product5.webp"><img class="product__media--preview__items--img" src="assets/img/product/big-product5.webp" alt="product-media-img"></a>
-                                                            <div class="product__media--view__icon">
-                                                                <a class="product__media--view__icon--link glightbox" href="assets/img/product/big-product5.webp" data-gallery="product-media-preview">
-                                                                    <svg class="product__media--view__icon--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="22.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path></svg>
-                                                                    <span class="visually-hidden">Media Gallery</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="swiper-slide">
-                                                        <div class="product__media--preview__items">
-                                                            <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="assets/img/product/big-product6.webp"><img class="product__media--preview__items--img" src="assets/img/product/big-product6.webp" alt="product-media-img"></a>
-                                                            <div class="product__media--view__icon">
-                                                                <a class="product__media--view__icon--link glightbox" href="assets/img/product/big-product6.webp" data-gallery="product-media-preview">
-                                                                    <svg class="product__media--view__icon--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="22.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path></svg>
-                                                                    <span class="visually-hidden">Media Gallery</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    {% endfor %}
+                                                   
                                                 </div>
                                             </div>
                                             <div class="product__media--nav swiper">
                                                 <div class="swiper-wrapper">
+                                                    {% for image in product.product_image.all %}
                                                     <div class="swiper-slide">
                                                         <div class="product__media--nav__items">
-                                                            <img class="product__media--nav__items--img" src="assets/img/product/small-product1.webp" alt="product-nav-img">
+                                                            <img class="product__media--nav__items--img" src="{{ image.product_image.url }}" alt="product-nav-img">
                                                         </div>
                                                     </div>
-                                                    <div class="swiper-slide">
-                                                        <div class="product__media--nav__items">
-                                                            <img class="product__media--nav__items--img" src="assets/img/product/small-product2.webp" alt="product-nav-img">
-                                                        </div>
-                                                    </div>
-                                                    <div class="swiper-slide">
-                                                        <div class="product__media--nav__items">
-                                                            <img class="product__media--nav__items--img" src="assets/img/product/small-product3.webp" alt="product-nav-img">
-                                                        </div>
-                                                    </div>
-                                                    <div class="swiper-slide">
-                                                        <div class="product__media--nav__items">
-                                                            <img class="product__media--nav__items--img" src="assets/img/product/small-product4.webp" alt="product-nav-img">
-                                                        </div>
-                                                    </div>
-                                                    <div class="swiper-slide">
-                                                        <div class="product__media--nav__items">
-                                                            <img class="product__media--nav__items--img" src="assets/img/product/small-product5.webp" alt="product-nav-img">
-                                                        </div>
-                                                    </div>
-                                                    <div class="swiper-slide">
-                                                        <div class="product__media--nav__items">
-                                                            <img class="product__media--nav__items--img" src="assets/img/product/small-product6.webp" alt="product-nav-img">
-                                                        </div>
-                                                    </div>
+                                                    {% endfor %}
                                                 </div>
                                                 <div class="swiper__nav--btn swiper-button-next"></div>
                                                 <div class="swiper__nav--btn swiper-button-prev"></div>
@@ -481,10 +417,10 @@
                                     <div class="col">
                                         <div class="product__details--info">
                                             <form action="product-left-sidebar.html#">
-                                                <h2 class="product__details--info__title mb-15">Fashion Plastic Chair</h2>
+                                                <h2 class="product__details--info__title mb-15">{{ product.title }}</h2>
                                                 <div class="product__details--info__price mb-10">
-                                                    <span class="current__price">$299.00</span>
-                                                    <span class="old__price">$320.00</span>
+                                                    <span class="current__price">{{ product.price }}</span>
+                                                    <span class="old__price">{{ product.old_price }}</span>
                                                 </div>
                                                 <div class="product__details--info__rating d-flex align-items-center mb-15">
                                                     <ul class="rating product__list--rating d-flex">
@@ -526,7 +462,7 @@
                                                         <li class="rating__list"><span class="rating__list--text">( 5.0)</span></li>
                                                     </ul>
                                                 </div>
-                                                <p class="product__details--info__desc mb-20">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut numquam ullam is recusandae laborum explicabo id sequi quisquam, ab sunt deleniti quidem ea animi facilis quod nostrum odit! Repellendus voluptas suscipit cum harum dolor sciunt.</p>
+                                                <p class="product__details--info__desc mb-20">{{ product.description }}</p>
                                                 <div class="product__variant">
                                                     <div class="product__variant--list mb-20">
                                                         <fieldset class="variant__input--fieldset">
