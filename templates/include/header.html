@@ -101,11 +101,10 @@
                     <form class="d-flex header__search--form" action="index-2.html#">
                         <div class="header__select--categories select">
                             <select class="header__select--inner">
-                                <option selected value="1">All Categories</option>
-                                <option value="2">Accessories</option>
-                                <option value="3">Accessories & More</option>
-                                <option value="4">Camera & Video </option>
-                                <option value="5">Butters & Eggs </option>
+                                <option selected value="1">Все категории</option>
+                                {% for category in categories %}
+                                <option href = "{% url 'category_detail' category.id %}">{{ category.title }}</option>
+                                {% endfor %}
                             </select>
                             <svg class="header__select--categories__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 20 10">
                                 <g id="Group_334" data-name="Group 334" transform="translate(-436 -90)">
@@ -171,6 +170,14 @@
                             <ul class="d-flex justify-content-center">
                                 <li class="header__menu--items">
                                     <a class="header__menu--link" href="{% url 'index' %}">Домой <span class="menu__plus--icon"></span></a>
+                                </li>
+                                <li class="header__menu--items">
+                                    <a class="header__menu--link" href="index-2.html#">Категории <span class="menu__plus--icon">+</span></a>
+                                    <ul class="header__sub--menu">
+                                        {% for category in categories %}
+                                        <li class="header__sub--menu__items"><a href="{% url 'category_detail' category.id %}" class="header__sub--menu__link">{{ category.title }}</a></li>
+                                        {% endfor %}
+                                    </ul>
                                 </li>
                                 <li class="header__menu--items mega__menu--items">
                                     <a class="header__menu--link" href="shop.html">Shop <span class="menu__plus--icon">+</span></a>

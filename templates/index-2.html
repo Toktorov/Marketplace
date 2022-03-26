@@ -171,39 +171,45 @@
         <section class="banner__section section--padding color-scheme-2 pt-0">
             <div class="container">
                 <div class="row mb--n28">
+                    {% for product in one_random_product %}
                     <div class="col-lg-6 col-md-6 banner2__col--6 mb-28">
                         <div class="banner__items position__relative">
-                            <a class="banner__items--thumbnail " href="shop.html"><img class="banner__items--thumbnail__img" src="{% static 'assets/img/banner/banner12.webp' %}" alt="banner-img">
+                            <a class="banner__items--thumbnail " href="shop.html"><img class="banner__items--thumbnail__img" src="{{ product.main_product_image.url }}" alt="banner-img">
                                 <div class="banner__content--style2">
-                                    <h3 class="banner__content--style2__subtitle">Get Discount Up to 80%</h3>
-                                    <h2 class="banner__content--style2--title">White Minimalist <br>
-                                        Combo Sofa </h2>
-                                    <span class="banner__content--style2__link primary__btn style2">Buy Now</span>    
+                                    <h3 class="banner__content--style2__subtitle" >{{ product.category }}</h3>
+                                    <h2 class="banner__content--style2--title">{{ product.title }} <br>
+                                        {{ product.price }} </h2>
+                                    <span class="banner__content--style2__link primary__btn style2">Купить сейчас</span>    
                                 </div>
                             </a>
                         </div>
                     </div>
+                    {% endfor %}
                     <div class="col-lg-6 col-md-6 banner2__col--6r mb-28">
+                        {% for product in two_random_product %}
                         <div class="banner__items position__relative mb-25">
-                            <a class="banner__items--thumbnail " href="shop.html"><img class="banner__items--thumbnail__img banner__img--height" src="{% static 'assets/img/banner/banner13.webp' %}" alt="banner-img">
+                            <a class="banner__items--thumbnail " href="shop.html"><img class="banner__items--thumbnail__img banner__img--height" src="{{ product.main_product_image.url }}" alt="banner-img">
                                 <div class="banner__content--style2">
-                                    <h3 class="banner__content--style2__subtitle text-ofwhite d-md-none">Get Discount Up to 80%</h3>
-                                    <h2 class="banner__content--style2--title text-white">White Minimalist <br>
-                                        Combo Sofa </h2>
-                                    <span class="banner__content--style2__link primary__btn style2 text-white">Buy Now</span>  
+                                    <h3 class="banner__content--style2__subtitle text-ofwhite d-md-none">{{ product.category }}</h3>
+                                    <h2 class="banner__content--style2--title text-white">{{ product.title }} <br>
+                                        {{ product.price }} </h2>
+                                    <span class="banner__content--style2__link primary__btn style2 text-white">Купить сейчас</span>  
                                 </div>
                             </a>
                         </div>
+                        {% endfor %}
+                        {% for product in three_random_product %}
                         <div class="banner__items position__relative">
-                            <a class="banner__items--thumbnail " href="shop.html"><img class="banner__items--thumbnail__img banner__img--height" src="{% static 'assets/img/banner/banner14.webp' %} " alt="banner-img">
+                            <a class="banner__items--thumbnail " href="shop.html"><img class="banner__items--thumbnail__img banner__img--height" src="{{ product.main_product_image.url }}" alt="banner-img">
                                 <div class="banner__content--style2">
-                                    <h3 class="banner__content--style2__subtitle text-ofwhite d-md-none">Get Discount Up to 80%</h3>
-                                    <h2 class="banner__content--style2--title text-white">White Minimalist <br>
-                                        Combo Sofa </h2>
-                                    <span class="banner__content--style2__link primary__btn style2 text-white">Buy Now</span>  
+                                    <h3 class="banner__content--style2__subtitle text-ofwhite d-md-none">{{ product.category }}</h3>
+                                    <h2 class="banner__content--style2--title text-white">{{ product.title }} <br>
+                                        {{ product.price }} </h2>
+                                    <span class="banner__content--style2__link primary__btn style2 text-white">Купить сейчас</span>  
                                 </div>
                             </a>
                         </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -217,27 +223,28 @@
                     <div class="col">
                         <div class="banner__section--inner d-flex align-items-center">
                             <div class="banner__discount--content">
-                                <h3 class="banner__discount--content__subtitle">Get Discount Up to 80%</h3>
-                                <h2 class="banner__discount--content__title">Top Trending
-                                    Furniture Items</h2>
-                                <p class="banner__discount--content__desc">Lorem ipsum dolor sit amet, consecteturiuyr 
-                                icing elit,sed do eiusmod ut labore et. 
-                                Lorem ipsum dolor sit amet, consecteturop.</p>
+                                <h3 class="banner__discount--content__subtitle">{{ home.title }}</h3>
+                                <h2 class="banner__discount--content__title">Самые лучшие
+                                    и качественные ноутбуки</h2>
+                                <p class="banner__discount--content__desc">Ноутбук — переносной компьютер, в корпусе которого объединены типичные компоненты ПК, включая дисплей, клавиатуру и устройство указания, а также аккумуляторные батареи. Ноутбуки отличаются небольшими размерами и весом, время автономной работы ноутбуков варьируется в пределах от 2 до 15 часов.</p>
                                 <a class=" primary__btn btn__style2" href="shop.html" rel="nofollow">Discover More</a>    
                             </div>
                             <div class="banner2__right--sidebar position__relative d-flex">
-                                <div class="banner2__sidebar--items one position__relative">
+                                <!-- <div class="banner2__sidebar--items one position__relative">
                                     <a class="banner__items--thumbnail " href="shop.html" rel="nofollow"><img class="banner__items--thumbnail__img" src="{% static 'assets/img/banner/banner17.webp' %}" alt="banner-img"></a>
                                     <div class="product__badge style2">
                                         <span class="product__badge--items style2 sale">Chair</span>
                                     </div>
-                                </div>
-                                <div class="banner2__sidebar--items two position__relative">
-                                    <a class="banner__items--thumbnail " href="shop.html" rel="nofollow"><img class="banner__items--thumbnail__img" src="{% static 'assets/img/banner/banner16.webp' %}" alt="banner-img"></a>
-                                </div>
+                                </div> -->
+                                {% for product in expensive_products %}
+
                                 <div class="banner2__sidebar--items three position__relative">
-                                    <a class="banner__items--thumbnail " href="shop.html" rel="nofollow"><img class="banner__items--thumbnail__img" src="{% static 'assets/img/banner/banner15.webp' %}" alt="banner-img"></a>
+                                    <a class="banner__items--thumbnail " href="{% url 'product_detail' product.id %}" rel="nofollow"><img class="banner__items--thumbnail__img" src="{{ product.main_product_image.url }}" width="200px" alt="banner-img"></a>
                                 </div>
+                                {% endfor %}
+                                <!-- <div class="banner2__sidebar--items three position__relative">
+                                    <a class="banner__items--thumbnail " href="shop.html" rel="nofollow"><img class="banner__items--thumbnail__img" src="{% static 'assets/img/banner/banner15.webp' %}" alt="banner-img"></a>
+                                </div> -->
                             </div>
                         </div>
                     </div>
