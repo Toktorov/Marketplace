@@ -10,54 +10,34 @@
                     <div class="col-lg-9 slider2__col--9">
                         <div class="hero__slider2--inner hero__slider--activation swiper">
                             <div class="hero__slider2--wrapper swiper-wrapper">
+                                {% for slide in slide_products %}
                                 <div class="swiper-slide ">
+                                    <!-- <img src="{{ slide.main_product_image.url }}" alt=""> -->
                                     <div class="hero__slider2--items hero__slider--bg2 slider1">
                                         <div class="hero__slider2--items__inner">
                                             <div class="slider__content2 text-center">
-                                                <p class="slider__content2--desc desc1 text-white mb-15">Making Beautiful Your Home</p> 
-                                                <h2 class="slider__content2--maintitle text-white h1">Build Your Home  <br>
-                                                    With Furniture</h2>   
-                                                <a class="slider__content2--btn primary__btn" href="shop.html" rel="nofollow">Get Disscount</a>
+                                                <p class="slider__content2--desc desc1 text-white mb-15">{{ slide.category }}</p> 
+                                                <h2 class="slider__content2--maintitle text-white h1">{{ slide.title }}  <br>
+                                                    Новый продукт</h2>   
+                                                <a class="slider__content2--btn primary__btn" href="{% url 'product_detail' slide.id %}" rel="nofollow">Посмотреть</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide ">
-                                    <div class="hero__slider2--items hero__slider--bg2 slider2">
-                                        <div class="hero__slider2--items__inner">
-                                            <div class="slider__content2 text-center">
-                                                <p class="slider__content2--desc desc1 text-white mb-15">Making Beautiful Your Home</p> 
-                                                <h2 class="slider__content2--maintitle text-white h1">Build Your Home  <br>
-                                                    With Furniture</h2>   
-                                                <a class="slider__content2--btn primary__btn" href="shop.html" rel="nofollow">Get Disscount</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide ">
-                                    <div class="hero__slider2--items hero__slider--bg2 slider3">
-                                        <div class="hero__slider2--items__inner">
-                                            <div class="slider__content2 text-center">
-                                                <p class="slider__content2--desc desc1 text-white mb-15">Making Beautiful Your Home</p> 
-                                                <h2 class="slider__content2--maintitle text-white h1">Build Your Home  <br>
-                                                    With Furniture</h2>   
-                                                <a class="slider__content2--btn primary__btn" href="shop.html" rel="nofollow">Get Disscount</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                {% endfor %}
                             </div>
                             <div class="swiper__nav--btn swiper-button-next"></div>
                             <div class="swiper__nav--btn swiper-button-prev"></div>
                         </div>
                     </div>
+                    {% for one in one_random_product %}
                     <div class="col-lg-3 banner2__col--3">
                         <div class="banner__sidebar--two banner__items banner__sidebar2">
-                            <a class="banner__items--thumbnail position__relative" href="shop.html"><img class="banner__items--thumbnail__img banner__sidebar2--img" src="{% static 'assets/img/banner/banner11.webp' %}" alt="banner-img">
+                            <a class="banner__items--thumbnail position__relative" href="{% url 'product_detail' one.id %}"><img class="banner__items--thumbnail__img banner__sidebar2--img" src="{{ one.main_product_image.url }}" alt="banner-img">
                                 <div class="banner__content--style2 banner__sidebar2--content">
-                                    <h3 class="banner__content--style2__subtitle">Limited Edition</h3>
-                                    <h2 class="banner__content--style2--title">Official Chair </h2>
-                                    <span class="banner__content--style2__link">Know More
+                                    <h3 class="banner__content--style2__subtitle">{{ one.category }}</h3>
+                                    <h2 class="banner__content--style2--title">{{ one.title }} </h2>
+                                    <span class="banner__content--style2__link">Узнать больше
                                         <svg xmlns="http://www.w3.org/2000/svg" width="10.902" height="9.085" viewBox="0 0 10.902 9.085">
                                             <path id="right-arrow" d="M14.673,12.126a.454.454,0,0,0-.626.658l3.485,3.3H8.454a.454.454,0,0,0,0,.908h9.062L14.046,20.3a.454.454,0,1,0,.626.658l3.963-3.775a.908.908,0,0,0-.008-1.292Z" transform="translate(-8 -12.001)" fill="currentColor"/>
                                         </svg>  
@@ -66,6 +46,7 @@
                             </a>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>
@@ -334,8 +315,8 @@
                                             <a class="product__items--content__tag" href="product-details.html">{{ product.category }}</a>
                                             <h3 class="product__items--content__title h4"><a href="{% url 'product_detail' product.id %}">{{ product.title|truncatewords:6}}</a></h3>
                                             <div class="product__items--price">
-                                                <span class="current__price">{{ product.price }}</span>
-                                                <span class="old__price">{{ product.old_price }}</span>
+                                                <span class="current__price">{{ product.price }} сом</span>
+                                                <span class="old__price">{{ product.old_price }} сом</span>
                                             </div>
                                             
                                             <ul class="rating product__items--rating d-flex justify-content-center">

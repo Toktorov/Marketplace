@@ -419,8 +419,8 @@
                                             <form action="product-left-sidebar.html#">
                                                 <h2 class="product__details--info__title mb-15">{{ product.title }}</h2>
                                                 <div class="product__details--info__price mb-10">
-                                                    <span class="current__price">{{ product.price }}</span>
-                                                    <span class="old__price">{{ product.old_price }}</span>
+                                                    <span class="current__price">{{ product.price }} сом</span>
+                                                    <span class="old__price">{{ product.old_price }} сом</span>
                                                 </div>
                                                 <div class="product__details--info__rating d-flex align-items-center mb-15">
                                                     <ul class="rating product__list--rating d-flex">
@@ -463,30 +463,6 @@
                                                     </ul>
                                                 </div>
                                                 <p class="product__details--info__desc mb-20">{{ product.description }}</p>
-                                                <div class="product__variant">
-                                                    <div class="product__variant--list mb-20">
-                                                        <fieldset class="variant__input--fieldset">
-                                                            <legend class="product__variant--title mb-8">Color :</legend>
-                                                            <div class="variant__color d-flex">
-                                                                <div class="variant__color--list">
-                                                                    <input id="color-red1" name="color" type="radio" checked>
-                                                                    <label class="variant__color--value red" for="color-red1" title="Red"><img class="variant__color--value__img" src="assets/img/product/product1.webp" alt="variant-color-img"></label>
-                                                                </div>
-                                                                <div class="variant__color--list">
-                                                                    <input id="color-red2" name="color" type="radio">
-                                                                    <label class="variant__color--value red" for="color-red2" title="Black"><img class="variant__color--value__img" src="assets/img/product/product6.webp" alt="variant-color-img"></label>
-                                                                </div>
-                                                                <div class="variant__color--list">
-                                                                    <input id="color-red3" name="color" type="radio">
-                                                                    <label class="variant__color--value red" for="color-red3" title="Pink"><img class="variant__color--value__img" src="assets/img/product/product7.webp" alt="variant-color-img"></label>
-                                                                </div>
-                                                                <div class="variant__color--list">
-                                                                    <input id="color-red4" name="color" type="radio">
-                                                                    <label class="variant__color--value red" for="color-red4" title="Orange"><img class="variant__color--value__img" src="assets/img/product/product4.webp" alt="variant-color-img"></label>
-                                                                </div>
-                                                            </div>
-                                                        </fieldset>
-                                                    </div>
                                                     <div class="product__variant--list mb-20">
                                                         <fieldset class="variant__input--fieldset">
                                                             <legend class="product__variant--title mb-8">Weight :</legend>
@@ -525,10 +501,15 @@
                                                     </div>
                                                     <div class="product__variant--list mb-15">
                                                         <div class="product__details--info__meta">
-                                                            <p class="product__details--info__meta--list"><strong>Barcode:</strong>  <span>565461</span> </p>
-                                                            <p class="product__details--info__meta--list"><strong>Sky:</strong>  <span>4420</span> </p>
-                                                            <p class="product__details--info__meta--list"><strong>Vendor:</strong>  <span>Belo</span> </p>
-                                                            <p class="product__details--info__meta--list"><strong>Type:</strong>  <span>Sofa</span> </p>
+                                                            <p class="product__details--info__meta--list"><strong>Процессор:</strong>  <span>{{ product.cpu }}</span> </p>
+                                                            <p class="product__details--info__meta--list"><strong>Объем оперативной памяти:</strong>  <span>{{ product.ram }}</span> </p>
+                                                            <p class="product__details--info__meta--list"><strong>Объем накопителя:</strong>  <span>{{ product.memory }}</span> </p>
+                                                            <p class="product__details--info__meta--list"><strong>Тип жесткого диска:</strong>  <span>{{ product.type_memory }}</span> </p>
+                                                            <p class="product__details--info__meta--list"><strong>Видеоадаптер:</strong>  <span>{{ product.video_card }}</span> </p>
+                                                            <p class="product__details--info__meta--list"><strong>Диагональ</strong>  <span>{{ product.screen }}</span> </p>
+                                                            <p class="product__details--info__meta--list"><strong>Время работа батереи:</strong>  <span>{{ product.time_to_word }}</span> </p>
+                                                            <p class="product__details--info__meta--list"><strong>Вес:</strong>  <span>{{ product.weight }}</span> </p>
+                                                            <p class="product__details--info__meta--list"><strong>Категория:</strong>  <span>{{ product.category }}</span> </p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -571,7 +552,7 @@
                                                 </div>
                                                 <div class="guarantee__safe--checkout">
                                                     <h5 class="guarantee__safe--checkout__title">Guaranteed Safe Checkout</h5>
-                                                    <img class="guarantee__safe--checkout__img" src="assets/img/other/safe-checkout.webp" alt="Payment Image">
+                                                    <img class="guarantee__safe--checkout__img" src="{% static 'assets/img/other/safe-checkout.webp' %} " alt="Payment Image">
                                                 </div>
                                             </form>
                                         </div>

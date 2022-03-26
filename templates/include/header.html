@@ -95,7 +95,7 @@
                     </a>
                 </div>
                 <div class="main__logo">
-                    <h1 class="main__logo--title"><a class="main__logo--link" href="index.html"><img class="main__logo--img" src="{{ home.logo.url }}" alt="logo-img"></a></h1>
+                    <h1 class="main__logo--title"><a class="main__logo--link" href="{% url 'index' %}"><img class="main__logo--img" src="{{ home.logo.url }}" alt="logo-img"></a></h1>
                 </div>
                 <div class="header__search--widget d-none d-lg-block">
                     <form class="d-flex header__search--form" action="index-2.html#">
@@ -170,12 +170,7 @@
                         <nav class="header__menu--navigation">
                             <ul class="d-flex justify-content-center">
                                 <li class="header__menu--items">
-                                    <a class="header__menu--link" href="index.html">Home <span class="menu__plus--icon">+</span></a>
-                                    <ul class="header__sub--menu">
-                                        <li class="header__sub--menu__items"><a href="index.html" class="header__sub--menu__link">Home One</a></li>
-                                        <li class="header__sub--menu__items"><a href="index-2.html" class="header__sub--menu__link">Home Two</a></li>
-                                        <li class="header__sub--menu__items"><a href="index-3.html" class="header__sub--menu__link">Home Three</a></li>
-                                    </ul>
+                                    <a class="header__menu--link" href="{% url 'index' %}">Домой <span class="menu__plus--icon"></span></a>
                                 </li>
                                 <li class="header__menu--items mega__menu--items">
                                     <a class="header__menu--link" href="shop.html">Shop <span class="menu__plus--icon">+</span></a>
