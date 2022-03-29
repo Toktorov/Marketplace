@@ -175,7 +175,7 @@
                                     <a class="header__menu--link" href="index-2.html#">Категории <span class="menu__plus--icon">+</span></a>
                                     <ul class="header__sub--menu">
                                         {% for category in categories %}
-                                        <li class="header__sub--menu__items"><a href="{% url 'category_detail' category.id %}" class="header__sub--menu__link">{{ category.title }}</a></li>
+                                        <li class="header__sub--menu__items"><a href="{% url 'category_detail' category.slug %}" class="header__sub--menu__link">{{ category.title }}</a></li>
                                         {% endfor %}
                                     </ul>
                                 </li>
