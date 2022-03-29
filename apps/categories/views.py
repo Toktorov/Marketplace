@@ -6,7 +6,7 @@ from apps.settings.models import Setting
 # Create your views here.
 def category_detail(request, slug):
     category = Category.objects.get(slug = slug)
-    categories = Category.objects.all().order_by('-id')
+    categories = Category.objects.all().order_by('?')[:5]
     home = Setting.objects.latest('-id')
     products = Product.objects.all().order_by('-id')
     context = {
