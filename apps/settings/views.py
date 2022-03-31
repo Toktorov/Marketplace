@@ -1,6 +1,6 @@
 from unicodedata import category
 from django.shortcuts import render
-from apps.settings.models import Setting
+from apps.settings.models import Setting, About, Team
 from apps.products.models import Product
 from apps.categories.models import Category
 
@@ -25,3 +25,14 @@ def index(request):
         'categories' : categories
     }
     return render(request, 'index-2.html', context)
+
+def about_us(request):
+    home = Setting.objects.latest('id')
+    about = About.objects.latest('id')
+    teams = Team.objects.all().order_by('-id')
+    context = {
+        'home' : home,
+        'about' : about,
+        'teams' : teams
+    }
+    return render(request, 'about.html',context)
