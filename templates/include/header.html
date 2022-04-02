@@ -98,26 +98,10 @@
                     <h1 class="main__logo--title"><a class="main__logo--link" href="{% url 'index' %}"><img class="main__logo--img" src="{{ home.logo.url }}" alt="logo-img"></a></h1>
                 </div>
                 <div class="header__search--widget d-none d-lg-block">
-                    <form class="d-flex header__search--form" action="index-2.html#">
-                        <div class="header__select--categories select">
-                            <select class="header__select--inner">
-                                <option selected value="1">Все категории</option>
-                                {% for category in categories %}
-                                <option href = "{% url 'category_detail' category.id %}">{{ category.title }}</option>
-                                {% endfor %}
-                            </select>
-                            <svg class="header__select--categories__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 20 10">
-                                <g id="Group_334" data-name="Group 334" transform="translate(-436 -90)">
-                                  <rect id="Rectangle_128" data-name="Rectangle 128" width="20" height="2" rx="1" transform="translate(436 90)" fill="currentColor"/>
-                                  <rect id="Rectangle_130" data-name="Rectangle 130" width="20" height="2" rx="1" transform="translate(436 98)" fill="currentColor"/>
-                                  <rect id="Rectangle_129" data-name="Rectangle 129" width="12" height="2" rx="1" transform="translate(440 94)" fill="currentColor"/>
-                                </g>
-                            </svg>
-                              
-                        </div>
+                    <form class="d-flex header__search--form" action="{% url 'product_search' %}">
                         <div class="header__search--box">
                             <label>
-                                <input class="header__search--input" placeholder="Search Products Here..." type="text">
+                                <input class="header__search--input" name = "key" placeholder="Search Products Here..." type="text">
                             </label>
                             <button class="header__search--button bg__secondary text-white" aria-label="search button" type="submit">
                                 <svg class="header__search--button__svg" xmlns="http://www.w3.org/2000/svg" width="27.51" height="26.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path></svg>
@@ -534,10 +518,10 @@
     <!-- Start serch box area -->
     <div class="predictive__search--box color-scheme-2" tabindex="-1">
         <div class="predictive__search--box__inner">
-            <h2 class="predictive__search--title">Search Products</h2>
-            <form class="predictive__search--form" action="index-2.html#">
+            <h2 class="predictive__search--title">Искать товар</h2>
+            <form class="predictive__search--form" action="{% url 'product_search' %}">
                 <label>
-                    <input class="predictive__search--input" placeholder="Search Here" type="text">
+                    <input class="predictive__search--input" name = "key" placeholder="Search Here" type="text">
                 </label>
                 <button class="predictive__search--button" aria-label="search button"><svg class="header__search--button__svg" xmlns="http://www.w3.org/2000/svg" width="30.51" height="25.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/></svg>  </button>
             </form>
