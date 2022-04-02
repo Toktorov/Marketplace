@@ -1,7 +1,7 @@
 from unicodedata import category
 from django.shortcuts import render
 from apps.settings.models import Setting, About, Team
-from apps.products.models import Product
+from apps.products.models import Product, Discount
 from apps.categories.models import Category
 
 # Create your views here.
@@ -14,6 +14,7 @@ def index(request):
     three_random_product = Product.objects.all().order_by('?')[:1]
     expensive_products = Product.objects.all().order_by('-price')[:3]
     categories = Category.objects.all().order_by('-id')
+    discount_product = Discount.objects.all().order_by('-id')[:1]
     context = {
         'home' : home,
         'products' : products,
@@ -22,7 +23,8 @@ def index(request):
         'two_random_product' : two_random_product,
         'three_random_product' : three_random_product,
         'expensive_products' : expensive_products,
-        'categories' : categories
+        'categories' : categories,
+        'discount_product' : discount_product
     }
     return render(request, 'index-2.html', context)
 

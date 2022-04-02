@@ -51,3 +51,16 @@ class ProductImage(models.Model):
     class Meta:
         verbose_name = "Картинка продукта"
         verbose_name_plural = "Картинки продуктов"
+
+class Discount(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="product_discount")
+    description = models.TextField()
+    how_many_discount = models.CharField(max_length=100)
+    date = models.DateTimeField()
+
+    def __str__(self):
+        return self.description
+
+    class Meta:
+        verbose_name = "Скидка"
+        verbose_name_plural = "Скидки"
