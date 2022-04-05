@@ -3500,16 +3500,15 @@
         <div class="deals__banner--section color-scheme-2 section--padding pt-0">
             <div class="container">
                 <div class="deals__banner--thumbnail mt-0">
-                    <a class="deals__banner--thumbnail__link display-block position__relative" href="shop.html"><img class="deals__banner--thumbnail__img style2 display-block" src="{% static 'assets/img/banner/banner-bg3.webp' %}" alt="deals-thumbnail-img">
+                    <a class="deals__banner--thumbnail__link display-block position__relative" href="{% url 'product_detail' discount.id %}"><img class="deals__banner--thumbnail__img style2 display-block" src="https://ru.gecid.com/data/news/202108191036-64393/img/01_asus_rog_zephyrus_g14_aw_se.jpg" alt="deals-thumbnail-img">
                         <div class="deals__content--style2">
-                            <h3 class="deals__content--style2__subtitle">Получите скидку до {{ discount.how_many_discount }}</h3>
-                            {% for product in discount.product_discount.all %}
-                            <h2 class="deals__content--style2__maintitle">{{product.title}}</h2>
-                            {% endfor %}
-                            <p class="deals__content--style2__desc d-md-none">{{discount.description}}</p>
-                            <p class="deals__content--style2__desc d-md-none">Скадка до {{discount.date|date:"F d, Y H"}}</p>
-                            <div class="deals__banner--countdown d-flex" data-countdown="{{discount.date|date:"F d, Y H"}}"></div>
-                            <span class="primary__btn btn__style2">Order Now</span>
+                            <h3 class="deals__content--style2__subtitle" style = "color: white;">Получите скидку до {{ discount.how_many_discount }}</h3>
+                            <h2 class="deals__content--style2__maintitle" style = "color: white;" >{{discount.product}}</h2>
+                            
+                            <p class="deals__content--style2__desc d-md-none" style = "color: white;">{{discount.description}}</p>
+                            <p class="deals__content--style2__desc d-md-none" style = "color: white;">Скидка до {{discount.date|date:"F d, Y H"}}</p>
+                            <div class="deals__banner--countdown d-flex"  data-countdown="{{discount.date|date:"F d, Y H"}}"></div>
+                            <span class="primary__btn btn__style2">Купить сейчас</span>
                         </div>
                     </a>
                 </div>

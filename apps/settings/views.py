@@ -14,7 +14,7 @@ def index(request):
     three_random_product = Product.objects.all().order_by('?')[:1]
     expensive_products = Product.objects.all().order_by('-price')[:3]
     categories = Category.objects.all().order_by('-id')
-    discount_product = Discount.objects.all().order_by('-id')[:1]
+    discount_product = Discount.objects.all()[:1]
     context = {
         'home' : home,
         'products' : products,
