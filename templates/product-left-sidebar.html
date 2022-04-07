@@ -509,21 +509,17 @@
                                                         </div>
                                                     </div>
                                                     {% endfor %}
-                                                    <div class="col-md-8 card mb-4  mt-3 ">
-                                                        <div class="card-body">
-                                                          {% if new_comment %}
-                                                          <div class="alert alert-success" role="alert">
-                                                            Your comment is awaiting moderation
-                                                          </div>
-                                                          {% else %}
-                                                          <h3>Leave a comment</h3>
-                                                          <form method="post" style="margin-top: 1.3em;">
-                                                            {{ comment_form.as_p }}
+                                                    <div class="card-footer p-0 d-flex">
+                                                        <form method="post" class="form-control">
                                                             {% csrf_token %}
-                                                            <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
-                                                          </form>
-                                                          {% endif %}
-                                                        </div>
+                                                            <input type="hidden" name="product_id" value="{{ product.id }}">
+                                                            <input type="text" name="comment_message" class="form-control"
+                                                                   placeholder="Оставьте комментарии...">
+                                                            <button type="submit" name="comment" class="btn btn-danger">
+                                                                Comment
+                                                            </button>
+                                                        </form>
+                                                    </div>
                                                 </div> 
                                             </div>    
                                         </div>

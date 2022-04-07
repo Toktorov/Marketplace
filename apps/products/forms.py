@@ -1,4 +1,3 @@
-from attr import field
 from django import forms
 from apps.products.models import ProductComment
 

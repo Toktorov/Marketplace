@@ -11,18 +11,11 @@ def product_detail(request, id):
     random_products = Product.objects.all().order_by('?')[:20]
     home = Setting.objects.latest('id')
     categories = Category.objects.all().order_by('?')[:5]
-    if request.method == 'POST':
-        comment_form = CommentForm(data=request.POST)
-        if comment_form.is_valid():
-
-            # Create Comment object but don't save to database yet
-            new_comment = comment_form.save(commit=False)
-            # Assign the current post to the comment
-            new_comment.product = product
-            # Save the comment to the database
-            new_comment.save()
-    else:
-        comment_form = CommentForm()
+    if 'comment' in request.POST:
+        id = request.POST.get('post_id')
+        message = request.POST.get('comment_message')
+        comment = ProductComment.objects.create(message=message, product=product, user=request.user)
+        return redirect('product_detail', product.id)
 
     context = {
         'product' : product,
