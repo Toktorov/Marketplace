@@ -4,11 +4,6 @@ from apps.settings.models import Setting
 
 # Create your views here.
 def register(request):
-    # home = Setting.objects.latest('id')
-    # context = {
-    #     'home' : home,
-    #     'user_form': user_form,
-    # }
     if request.method == 'POST':
         user_form = UserRegistrationForm(request.POST)
         if user_form.is_valid():
