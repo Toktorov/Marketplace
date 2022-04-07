@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from apps.products.models import Product, ProductComment
-from apps.products.forms import CommentForm
 from apps.settings.models import Setting
 from apps.categories.models import Category
 from django.db.models import Q
