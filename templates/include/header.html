@@ -211,27 +211,8 @@
                                 <li class="header__menu--items">
                                     <a class="header__menu--link" href="{% url 'about_us' %}">О нас </a>  
                                 </li>
-                                <li class="header__menu--items">
-                                    <a class="header__menu--link" href="blog.html">Blog <span class="menu__plus--icon">+</span> </a>
-                                    <ul class="header__sub--menu">
-                                        <li class="header__sub--menu__items"><a href="blog.html" class="header__sub--menu__link">Blog Grid</a></li>
-                                        <li class="header__sub--menu__items"><a href="blog-details.html" class="header__sub--menu__link">Blog Details</a></li>
-                                        <li class="header__sub--menu__items"><a href="blog-left-sidebar.html" class="header__sub--menu__link">Blog Left Sidebar</a></li>
-                                        <li class="header__sub--menu__items"><a href="blog-right-sidebar.html" class="header__sub--menu__link">Blog Right Sidebar</a></li>
-                                    </ul>
-                                </li>
-                                <li class="header__menu--items">
-                                    <a class="header__menu--link" href="index-2.html#">Pages <span class="menu__plus--icon">+</span></a>
-                                    <ul class="header__sub--menu">
-                                        <li class="header__sub--menu__items"><a href="about.html" class="header__sub--menu__link">About Us</a></li>
-                                        <li class="header__sub--menu__items"><a href="contact.html" class="header__sub--menu__link">Contact Us</a></li>
-                                        <li class="header__sub--menu__items"><a href="cart.html" class="header__sub--menu__link">Cart Page</a></li>
-                                        <li class="header__sub--menu__items"><a href="portfolio.html" class="header__sub--menu__link">Portfolio Page</a></li>
-                                        <li class="header__sub--menu__items"><a href="wishlist.html" class="header__sub--menu__link">Wishlist Page</a></li>
-                                        <li class="header__sub--menu__items"><a href="login.html" class="header__sub--menu__link">Login Page</a></li>
-                                        <li class="header__sub--menu__items"><a href="404.html" class="header__sub--menu__link">Error Page</a></li>
-                                    </ul>
-                                </li>
+                                
+                                
                                 <li class="header__menu--items">
                                     <a class="header__menu--link" href="contact.html">Contact </a>  
                                 </li>
@@ -240,6 +221,9 @@
                                     <a class="header__menu--link" href="index-2.html#">{{user.username}} <span class="menu__plus--icon">+</span></a>
                                     <ul class="header__sub--menu">
                                         <li class="header__sub--menu__items"><a href="about.html" class="header__sub--menu__link">Мой аккаунт</a></li>
+                                        {% if user.is_superuser %}
+                                        <li class="header__sub--menu__items"><a href="{% url 'product_create' %}" class="header__sub--menu__link">Создать продукт</a></li>
+                                        {% endif %}
                                         <li class="header__sub--menu__items"><a href="{% url 'logout' %}" class="header__sub--menu__link">Выйти</a></li>
                                     </ul>
                                 </li>
@@ -247,6 +231,10 @@
                                 <li class="header__menu--items">
                                     <a class="header__menu--link" href="{% url 'user_login' %}">Войти </a>  
                                 </li>
+                                <li class="header__menu--items">
+                                    <a class="header__menu--link" href="{% url 'register' %}">Зарегистрироваться </a>  
+                                </li>
+
                                 {% endif %}
                             </ul>
                         </nav>

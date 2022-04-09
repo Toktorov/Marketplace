@@ -6,7 +6,7 @@ from apps.users.models import User
 # Create your models here.
 class Product(models.Model):
     title = models.CharField(max_length=255)
-    main_product_image = models.ImageField(upload_to = 'main_product_image')
+    main_product_image = models.ImageField(upload_to = 'main_product_image', blank = True, null = True)
     cpu = models.CharField(max_length=255)
     RAM_CHOICES = (
         ('2 GB', '2 GB'),

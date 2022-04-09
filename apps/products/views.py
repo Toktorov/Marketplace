@@ -3,6 +3,7 @@ from apps.products.models import Product, ProductComment
 from apps.settings.models import Setting
 from apps.categories.models import Category
 from django.db.models import Q
+from apps.products.forms import ProductCreateForm, ProductUpdateForm
 
 # Create your views here.
 def product_detail(request, id):
@@ -35,3 +36,24 @@ def product_search(request):
         'products' : products
     }
     return render(request, 'products/search.html', context)
+
+def product_create(request):
+    form = ProductCreateForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('index')
+    context = {
+        'form' : form
+    }
+    return render(request, 'products/create.html', context)
+
+def product_update(request, id):
+    product = Product.objects.get(id = id)
+    form = ProductUpdateForm(request.POST or None, instance=product)
+    if form.is_valid():
+        form.save()
+        return redirect('product_detail', product.id)
+    context = {
+        'form' : form
+    }
+    return render(request, 'products/update.html', context)

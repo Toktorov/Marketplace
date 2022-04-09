@@ -307,8 +307,16 @@
                                                             <svg class="quickview__variant--wishlist__svg" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512"><path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
                                                             Add to Wishlist
                                                         </a>
-                                                        <button class="variant__buy--now__btn primary__btn" type="submit">Buy it now</button>
+                                                        <button class="variant__buy--now__btn primary__btn" type="submit">Купить сейчас</button>
                                                     </div>
+                                                    {% if user.is_superuser %}
+                                                    <div class="product__variant--list mb-15">
+                                                        <a href = "{% url 'product_update' product.id %}" class="variant__buy--now__btn primary__btn">Обновить товар</a>
+                                                    </div>
+                                                    <div class="product__variant--list mb-15">
+                                                        <button class="variant__buy--now__btn primary__btn" type="submit">Удалить товар</button>
+                                                    </div>
+                                                    {% endif %}
                                                     <div class="product__variant--list mb-15">
                                                         <div class="product__details--info__meta">
                                                             <p class="product__details--info__meta--list"><strong>Процессор:</strong>  <span>{{ product.cpu }}</span> </p>
@@ -421,16 +429,21 @@
                                                                 </span>
                                                             </li>
                                                         </ul>
-                                                        <span class="reviews__summary--caption">Based on 2 reviews</span>
+                                                        <span class="reviews__summary--caption">Отзывов {{product.product_comment.all.count  }}</span>
                                                     </div>
-                                                    <a class="actions__newreviews--btn primary__btn" href="product-left-sidebar.html#writereview">Write A Review</a>
                                                 </div>
                                                 <div class="reviews__comment--area">
                                                     {% for comment in product.product_comment.all %}
                                                     <div class="reviews__comment--list d-flex">
+                                                        {% if user.profile_image %}
                                                         <div class="reviews__comment--thumbnail">
-                                                            <img src="{% static 'assets/img/other/comment-thumb1.webp' %}" alt="comment-thumbnail">
+                                                            <img src="{{ user.profile_image.url }}" alt="comment-thumbnail">
                                                         </div>
+                                                        {% else %}
+                                                        <div class="reviews__comment--thumbnail">
+                                                            <img src="https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482930.jpg" alt="comment-thumbnail">
+                                                        </div>
+                                                        {% endif %}
                                                         <div class="reviews__comment--content">
                                                             <h4 class="reviews__comment--content__title">{{ comment.user }}</h4>
                                                             <ul class="rating reviews__comment--rating d-flex mb-5">
@@ -480,7 +493,7 @@
                                                             {% csrf_token %}
                                                             <input type="hidden" name="product_id" value="{{ product.id }}">
                                                             <input type="text" name="comment_message" class="form-control"
-                                                                   placeholder="Оставьте комментарии...">
+                                                                   placeholder="Оставьте комментарии..." style="width: 400px; height: 200px;">
                                                             <button type="submit" name="comment" class="btn btn-danger">
                                                                 Comment
                                                             </button>
