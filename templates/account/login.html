@@ -1,6 +1,7 @@
 {% extends 'homepage.html' %}
 {% load static %}
 {% block content %}
+{% load socialaccount %}
 {% include 'include/header.html' %}
 <main class="main__content_wrapper">
         
@@ -39,6 +40,8 @@
                                     {% csrf_token %}
                                     <p><input type="submit" value="Log-in"></p>
                                 </form>
+                                <h3 class="account__login--header__title mb-10">Войти через: </h3>
+                                <a href="{% provider_login_url 'google' %}""><button>Helo</button></a>
                                 </div>
                             </div>
                         </div>
