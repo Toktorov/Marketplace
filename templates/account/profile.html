@@ -1,20 +1,19 @@
 {% extends 'homepage.html' %}
 {% load static %}
 {% block content %}
-{% load socialaccount %}
 {% include 'include/header.html' %}
 <main class="main__content_wrapper">
-        
+
     <!-- Start breadcrumb section -->
     <section class="breadcrumb__section breadcrumb__bg">
         <div class="container">
             <div class="row row-cols-1">
                 <div class="col">
                     <div class="breadcrumb__content">
-                        <h1 class="breadcrumb__content--title text-white mb-10">Account Page</h1>
+                        <h1 class="breadcrumb__content--title text-white mb-10">My Account</h1>
                         <ul class="breadcrumb__content--menu d-flex">
                             <li class="breadcrumb__content--menu__items"><a class="text-white" href="index.html">Home</a></li>
-                            <li class="breadcrumb__content--menu__items"><span class="text-white">Account Page</span></li>
+                            <li class="breadcrumb__content--menu__items"><span class="text-white">My Account</span></li>
                         </ul>
                     </div>
                 </div>
@@ -22,35 +21,54 @@
         </div>
     </section>
     <!-- End breadcrumb section -->
-
-    <!-- Start login section  -->
-    <div class="login__section section--padding">
+    
+    <!-- my account section start -->
+    <section class="my__account--section section--padding">
         <div class="container">
-          
-                <div class="login__section--inner">
-                    <div class="row row-cols-md-2 row-cols-1"> 
-                        <div class="col">
-                            <div class="account__login register">
-                                <div class="account__login--header mb-25">
-                                    <h3 class="account__login--header__title mb-10">Create an Account</h3>
-                                    <p class="account__login--header__desc">Register here if you are a new customer</p>
-                                </div>
-                                <form action="." method="post">
-                                    {{ form.as_p }}
-                                    {% csrf_token %}
-                                    <p><input type="submit" value="Log-in"></p>
-                                </form>
-                                <h3 class="account__login--header__title mb-10">Войти через: </h3>
-                                <a href="{% provider_login_url 'google' %}"><button>Google Account</button></a>
-                                </div>
-                            </div>
+            <div class="my__account--section__inner border-radius-10 d-flex">
+                <div class="account__left--sidebar">
+                    <h3 class="account__content--title mb-20">My Profile</h3>
+                    <ul class="account__menu">
+                        <li class="account__menu--list"><a href="my-account.html">Dashboard</a></li>
+                        <li class="account__menu--list active"><a href="my-account-2.html">Addresses</a></li>
+                        <li class="account__menu--list"><a href="wishlist.html">Wishlist</a></li>
+                        <li class="account__menu--list"><a href="login.html">Log Out</a></li>
+                    </ul>
+                </div>
+                <div class="account__wrapper">
+                    <div class="account__content">
+                        <h3 class="account__content--title mb-20">{{ user.username }}</h3>
+                        <!-- <button class="new__address--btn primary__btn mb-25" type="button">Add a new address</button> -->
+                        <div class="account__details two">
+                            <!-- <h4 class="account__details--title">Default</h4> -->
+                            {% if user.profile_image %}
+                            <img src="{{ user.profile_image.url }}" width="120px" alt="">
+                            {% else %}
+                            <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" width="120px" alt="">
+                            {% endif %}
+                            <h4 class="account__details--desc">Имя пользователя: {{ user.username }}</h4>
+                            <h4 class="account__details--desc">Имя: {{ user.first_name }}</h4>
+                            <h4 class="account__details--desc">Фамилия: {{ user.last_name }}</h4>
+                            <h4 class="account__details--desc">Электронный адрес: {{ user.email }}</h4>
+                            <h4 class="account__details--desc">Телефонный номер: {{ user.tel }}</h4>
+                            {% if user.socialaccount_set.all.0.last_login %}
+                            <h4 class="account__details--desc">Последний вход: {{ user.socialaccount_set.all.0.last_login}}</h4>
+                            {% else %}
+                            <h4 class="account__details--desc">Последний вход: {{ user.last_login}}</h4>
+                            {% endif %}
+                            <h4 class="account__details--desc">Дата добавления: {{ user.date_joined }}</h4>
+                            <!-- <a class="account__details--link" href="my-account-2.html">View Addresses (1)</a> -->
+                        </div>
+                        <div class="account__details--footer d-flex">
+                            <a href="{% url 'update_profile' user.id  %}"><button class="account__details--footer__btn" type="button">Обновить</button></a>
+                            <button class="account__details--footer__btn" type="button">Удалить</button>
                         </div>
                     </div>
                 </div>
-           
-        </div>     
-    </div>
-    <!-- End login section  -->
+            </div>
+        </div>
+    </section>
+    <!-- my account section end -->
 
     <!-- Start Newsletter banner section -->
     <section class="newsletter__banner--section section--padding pt-0">
@@ -61,7 +79,7 @@
                     <h5 class="newsletter__content--subtitle text-white">Want to offer regularly ?</h5>
                     <h2 class="newsletter__content--title text-white h3 mb-25">Subscribe Our Newsletter <br>
                         for Get Daily Update</h2>
-                    <form class="newsletter__subscribe--form position__relative" action="login.html#">
+                    <form class="newsletter__subscribe--form position__relative" action="my-account-2.html#">
                         <label>
                             <input class="newsletter__subscribe--input" placeholder="Enter your email address" type="email">
                         </label>
@@ -175,7 +193,7 @@
                         <div class="footer__newsletter footer__widget--inner">
                             <p class="footer__newsletter--desc">Get updates by subscribe our
                                 weekly newsletter</p>
-                            <form class="newsletter__subscribe--form__style position__relative" action="login.html#">
+                            <form class="newsletter__subscribe--form__style position__relative" action="my-account-2.html#">
                                 <label>
                                     <input class="footer__newsletter--input newsletter__subscribe--input" placeholder="Enter your email address" type="email">
                                 </label>
@@ -202,10 +220,4 @@
 
 <!-- Scroll top bar -->
 <button id="scroll__top"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 244l144-144 144 144M256 120v292"/></svg></button>
-
-
-<!-- All Script JS Plugins here  -->
-<!-- <script src="assets/js/vendor/popper.js" defer="defer"></script> -->
-<!-- <script src="assets/js/vendor/bootstrap.min.js" defer="defer"></script> -->
-
 {% endblock %}

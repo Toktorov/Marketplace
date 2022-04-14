@@ -1,0 +1,18 @@
+{% extends 'homepage.html' %}
+{% load static %}
+{% block content %}
+{% include 'include/header.html' %}
+<div class="main">
+    <!-- Create a Form -->
+    <form method="POST">
+        <!-- Security token by Django -->
+        {% csrf_token %}
+ 
+        <!-- form as paragraph -->
+        {{ form.as_p }}
+ 
+        <input type="submit" class="account__details--footer__btn" value="Update">
+    </form>
+    <a href="{% url 'index' %}"><button class="account__details--footer__btn" type="button">Cencel</button></a>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'homepage.html' %}
+{% load static %}
+<main class="main__content_wrapper">
+    
+    <!-- Start breadcrumb section -->
+    <section class="breadcrumb__section breadcrumb__bg">
+        <div class="container">
+            <div class="row row-cols-1">
+                <div class="col">
+                    <div class="breadcrumb__content">
+                        <h1 class="breadcrumb__content--title text-white mb-10">My Account</h1>
+                        <ul class="breadcrumb__content--menu d-flex">
+                            <li class="breadcrumb__content--menu__items"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb__content--menu__items"><span class="text-white">My Account</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End breadcrumb section -->
+    
+    <!-- my account section start -->
+    <section class="my__account--section section--padding">
+        <div class="container">
+            <div class="my__account--section__inner border-radius-10 d-flex">
+                <div class="account__left--sidebar">
+                    {% block content %}
+                    
+
+                    {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- my account section end -->
+
+
