@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from apps.products.models import Product, ProductComment
+from numpy import product
+from apps.products.models import Product, ProductComment, FavoriteProduct
 from apps.settings.models import Setting
 from apps.categories.models import Category
 from django.db.models import Q
@@ -57,3 +58,10 @@ def product_update(request, id):
         'form' : form
     }
     return render(request, 'products/update.html', context)
+
+def favorite_product(request):
+    products = FavoriteProduct.objects.all()
+    context = {
+        'products' : products,
+    }
+    return render(request, 'products/favorite.html', context)

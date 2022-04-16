@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'apps.products',
     'apps.settings',
     'apps.users',
+    'apps.order',
 
     # Add the following django-allauth apps
     'allauth',

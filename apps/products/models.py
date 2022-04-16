@@ -64,6 +64,16 @@ class ProductComment(models.Model):
         verbose_name = "Коментарий"
         verbose_name_plural = "Коментарии"
 
+class FavoriteProduct(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_favorite_product")
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="favorite_product")
+    created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Избранное"
+        verbose_name_plural = "Избранные"
+
+
 class Discount(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="product_discount")
     description = models.TextField()
