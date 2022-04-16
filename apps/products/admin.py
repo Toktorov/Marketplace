@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.products.models import Product, ProductImage, Discount, ProductComment, FavoriteProduct
+from apps.products.models import Product, ProductImage, Discount, ProductComment, FavoriteProduct, LikeProduct
 
 # Register your models here.
 class ProductImageAdmin(admin.TabularInline):
@@ -17,3 +17,4 @@ admin.site.register(Product, ProductAdmin)
 admin.site.register(Discount)
 admin.site.register(ProductComment)
 admin.site.register(FavoriteProduct)
+admin.site.register(LikeProduct)

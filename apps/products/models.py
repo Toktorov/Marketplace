@@ -64,6 +64,10 @@ class ProductComment(models.Model):
         verbose_name = "Коментарий"
         verbose_name_plural = "Коментарии"
 
+class LikeProduct(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="likes_user")
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="likes_product")
+
 class FavoriteProduct(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_favorite_product")
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="favorite_product")

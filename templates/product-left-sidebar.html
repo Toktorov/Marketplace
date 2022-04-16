@@ -244,7 +244,7 @@
                                     </div>
                                     <div class="col">
                                         <div class="product__details--info">
-                                            <form action="product-left-sidebar.html#">
+                                            
                                                 <h2 class="product__details--info__title mb-15">{{ product.title }}</h2>
                                                 <div class="product__details--info__price mb-10">
                                                     <span class="current__price">{{ product.price }} сом</span>
@@ -304,11 +304,26 @@
                                                     </div>
                                                     <div class="product__variant--list mb-15">
                                                         <a class="variant__wishlist--icon mb-15" href="wishlist.html" title="Add to wishlist">
+                                                            {{ product.likes_product.all.count }} человеку понравилось
+                                                        </a>
+                                                        
+                                                    </div>
+                                                    <div class="product__variant--list mb-15">
+                                                        <a class="variant__wishlist--icon mb-15" href="wishlist.html" title="Add to wishlist">
                                                             <svg class="quickview__variant--wishlist__svg" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512"><path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
                                                             Add to Wishlist
                                                         </a>
-                                                        <button class="variant__buy--now__btn primary__btn" type="submit">Купить сейчас</button>
+                                                        
                                                     </div>
+                                                    <div class="product__variant--list mb-15">
+                                                        {% if user.is_authenticated %}
+                                                        <form method="post">
+                                                           {% csrf_token %}
+                                                           <input type="hidden" name="like">
+                                                           <button type="submit" class="account__details--footer__btn" style = "margin-top: 10px">Понравилось</button>
+                                                       </form>
+                                                       {% endif %}
+                                                     </div>
                                                     {% if user.is_superuser %}
                                                     <div class="product__variant--list mb-15">
                                                         <a href = "{% url 'product_update' product.id %}" class="variant__buy--now__btn primary__btn">Обновить товар</a>
@@ -372,7 +387,7 @@
                                                     <h5 class="guarantee__safe--checkout__title">Guaranteed Safe Checkout</h5>
                                                     <img class="guarantee__safe--checkout__img" src="{% static 'assets/img/other/safe-checkout.webp' %} " alt="Payment Image">
                                                 </div>
-                                            </form>
+                                           
                                         </div>
                                     </div>
                                 </div>
