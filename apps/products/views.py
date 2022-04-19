@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from numpy import product
 from apps.products.models import Product, ProductComment, FavoriteProduct, LikeProduct
 from apps.settings.models import Setting
 from apps.categories.models import Category

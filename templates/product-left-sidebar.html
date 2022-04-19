@@ -503,6 +503,7 @@
                                                         </div>
                                                     </div>
                                                     {% endfor %}
+                                                    {% if user.is_authenticated %}
                                                     <div class="card-footer p-0 d-flex">
                                                         <form method="post" class="form-control">
                                                             {% csrf_token %}
@@ -514,6 +515,11 @@
                                                             </button>
                                                         </form>
                                                     </div>
+                                                    {% else %}
+                                                    <div class="card-footer p-0 d-flex">
+                                                        <h4>Зарегистрируйтесь чтобы оставлять комментарии</h4>
+                                                    </div>
+                                                    {% endif %}
                                                 </div> 
                                             </div>    
                                         </div>

@@ -1,5 +1,4 @@
 from django import forms
-from pyrsistent import field 
 from apps.users.models import User 
 
 
