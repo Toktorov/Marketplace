@@ -1,0 +1,47 @@
+{% extends 'include/cart.html' %}
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+      <div class="col-12 d-block mx-auto text-center">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Номер</th>
+              <th scope="col">Товар</th>
+              <th scope="col">Цена</th>
+              <th scope="col">Удалить</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for product in cart_obj.products.all %}
+              <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+              <td><a href="{{ product.get_absolute_url }}">
+                  {{ product.title}}</a></td>
+                <td>{{ product.price }}</td>
+                <td>
+                  {% include 'include/cart_form.html' with product=product in_cart=True %}
+                </td>
+              </tr>
+            {% endfor %}
+            <tr>
+              <th colspan="2" class="text-right">Итого:</th>
+              <th>{{ cart_obj.subtotal }} KGZ
+                
+              </th>
+            </tr>
+            <tr>
+              <th colspan="2" class="text-right">Итого с НДС:</th>
+              <th>{{ cart_obj.total }} KGZ
+               
+              </th>
+            </tr>
+          </tbody>
+        </table>
+        <div class="continue__shopping d-flex justify-content-between">
+            <a class="continue__shopping--link" href="shop.html">Оформить заказ</a>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+<form method="post" action="{% url 'update_cart' %}">
+    {% csrf_token %}
+    <input type="hidden" name="product_id" value="{{ product.id }}"/>
+  
+    {% if in_cart %}
+      <button type="submit" class="quickview__cart--btn primary__btn">Удалить</button>
+    {% else %}
+      {% if product in cart_obj.products.all %}
+           <b>Товар есть в корзине.
+          <br>
+          Не хотели бы вы его удалить?</b>
+        <br>
+        <button type="submit" class="quickview__cart--btn primary__btn">Удалить</button>
+      {% else %}
+        <b>Товара нет в корзине.
+          <br>
+          Не хотели бы вы его добавить?</b>
+        <br>
+        <button type="submit" class="quickview__cart--btn primary__btn">Добавить</button>
+      {% endif %}
+    {% endif %}
+  </form>

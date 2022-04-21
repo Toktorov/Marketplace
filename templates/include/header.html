@@ -42,46 +42,6 @@
                       <a class="header__info--text" href="mailto:info@example.com">{{ home.email }}</a>
                     </li>
                 </ul>
-                <div class="header__shipping">
-                    <p class="header__shipping--text">Get Up To 80% off In your first Offer!</p>
-                </div>
-                <div class="language__currency style2 d-none d-lg-block">
-                    <ul class="d-flex align-items-center">
-                        <li class="language__currency--list">
-                            <a class="account__currency--link style2" href="index-2.html#">
-                                <img src="{% static 'assets/img/icon/usd-icon.webp' %}" alt="currency">
-                                <span>Currency</span> 
-                                <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
-                                    <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
-                                </svg>
-                            </a>
-                            <div class="dropdown__currency">
-                                <ul>
-                                    <li class="currency__items"><a class="currency__text" href="index-2.html#">CAD</a></li>
-                                    <li class="currency__items"><a class="currency__text" href="index-2.html#">CNY</a></li>
-                                    <li class="currency__items"><a class="currency__text" href="index-2.html#">EUR</a></li>
-                                    <li class="currency__items"><a class="currency__text" href="index-2.html#">GBP</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="language__currency--list">
-                            <a class="language__switcher style2" href="index-2.html#">
-                                <img class="language__switcher--icon__img" src="{% static 'assets/img/icon/language-icon.webp' %}" alt="currency">
-                                <span>English</span> 
-                                <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
-                                    <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
-                                </svg>
-                            </a>
-                            <div class="dropdown__language">
-                                <ul>
-                                    <li class="language__items"><a class="language__text" href="index-2.html#">France</a></li>
-                                    <li class="language__items"><a class="language__text" href="index-2.html#">Russia</a></li>
-                                    <li class="language__items"><a class="language__text" href="index-2.html#">Spanish</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </div>
     </div>
@@ -133,11 +93,11 @@
                             </a>
                         </li>
                         <li class="header__account--items">
-                            <a class="header__account--btn minicart__open--btn" href="javascript:void(0)">
+                            <a class="header__account--btn minicart__open--btn" href="{% url 'cart_page' %}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18.897" height="21.565" viewBox="0 0 18.897 21.565">
                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"/>
                                 </svg>
-                                <span class="items__count">02</span> 
+                                <span class="items__count">10</span> 
                             </a>
                         </li>
                     </ul>

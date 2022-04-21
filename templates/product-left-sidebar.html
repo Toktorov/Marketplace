@@ -293,14 +293,15 @@
                                                 <p class="product__details--info__desc mb-20">{{ product.description }}</p>
                                                     
                                                     <div class="product__variant--list quantity d-flex align-items-center mb-20">
-                                                        <div class="quantity__box">
-                                                            <button type="button" class="quantity__value quickview__value--quantity decrease" aria-label="quantity value" value="Decrease Value">-</button>
+                                                        <!-- <div class="quantity__box"> -->
+                                                            <!-- <button type="button" class="quantity__value quickview__value--quantity decrease" aria-label="quantity value" value="Decrease Value">-</button>
                                                             <label>
                                                                 <input type="number" class="quantity__number quickview__value--number" value="1" />
                                                             </label>
-                                                            <button type="button" class="quantity__value quickview__value--quantity increase" aria-label="quantity value" value="Increase Value">+</button>
-                                                        </div>
-                                                        <button class="quickview__cart--btn primary__btn" type="submit">Add To Cart</button>  
+                                                            <button type="button" class="quantity__value quickview__value--quantity increase" aria-label="quantity value" value="Increase Value">+</button> -->
+                                                        <!-- </div> -->
+                                                        <!-- <button class="quickview__cart--btn primary__btn" type="submit">Добавить в корзину</button> -->
+                                                        {% include 'include/cart_form.html' with product=product %}  
                                                     </div>
                                                     <div class="product__variant--list mb-15">
                                                         <a class="variant__wishlist--icon mb-15" href="wishlist.html" title="Add to wishlist">
@@ -311,7 +312,7 @@
                                                     <div class="product__variant--list mb-15">
                                                         <a class="variant__wishlist--icon mb-15" href="wishlist.html" title="Add to wishlist">
                                                             <svg class="quickview__variant--wishlist__svg" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512"><path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
-                                                            Add to Wishlist
+                                                            Добавить в избранное
                                                         </a>
                                                         
                                                     </div>
@@ -326,10 +327,10 @@
                                                      </div>
                                                     {% if user.is_superuser %}
                                                     <div class="product__variant--list mb-15">
-                                                        <a href = "{% url 'product_update' product.id %}" class="variant__buy--now__btn primary__btn">Обновить товар</a>
+                                                        <a href = "{% url 'product_update' product.id %}" class="account__details--footer__btn">Обновить товар</a>
                                                     </div>
                                                     <div class="product__variant--list mb-15">
-                                                        <button class="variant__buy--now__btn primary__btn" type="submit">Удалить товар</button>
+                                                        <button class="account__details--footer__btn" type="submit">Удалить товар</button>
                                                     </div>
                                                     {% endif %}
                                                     <div class="product__variant--list mb-15">
