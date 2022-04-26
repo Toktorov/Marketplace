@@ -1,6 +1,3 @@
-from distutils.command.upload import upload
-import re
-from tabnanny import verbose
 from django.db import models
 
 # Create your models here.
