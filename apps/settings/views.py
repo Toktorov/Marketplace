@@ -2,6 +2,7 @@ from django.shortcuts import render
 from apps.settings.models import Setting, About, Team
 from apps.products.models import Product, Discount, ProductComment
 from apps.categories.models import Category
+from django.template import RequestContext
 
 # Create your views here.
 def index(request):
@@ -41,3 +42,14 @@ def about_us(request):
         'teams' : teams
     }
     return render(request, 'about.html',context)
+
+def handler404(request, exception):
+    home = Setting.objects.latest('id')
+    categories = Category.objects.all().order_by('-id')
+    context = {
+        'home' : home,
+        'categories' : categories,
+    }
+    response = render(request, "404.html", context=context)
+    response.status_code = 404
+    return response
