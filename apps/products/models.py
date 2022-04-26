@@ -33,6 +33,7 @@ class Product(models.Model):
     description = models.TextField()
     count = models.IntegerField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='product_category')
+    slug = models.SlugField()
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

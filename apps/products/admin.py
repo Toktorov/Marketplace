@@ -12,6 +12,7 @@ class ProductAdmin(admin.ModelAdmin):
     search_fields = ('title', 'price')
     ordering = ('-price',)
     list_per_page = 10
+    prepopulated_fields = {"slug" : ("title", )}
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Discount)

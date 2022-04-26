@@ -31,7 +31,7 @@ def product_detail(request, id):
         'home' : home,
         'categories' : categories,
     }
-    return render(request, 'product-left-sidebar.html', context)
+    return render(request, 'products/detail.html', context)
 
 def product_search(request):
     products = Product.objects.all()

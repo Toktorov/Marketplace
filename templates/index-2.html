@@ -259,11 +259,9 @@
                         <h2 class="section__heading--maintitle">Новое поступление</h2>
                     </div>
                     <ul class="product__tab--btn style2 d-flex justify-content-center">
-                        <li class="product__tab--btn__list style2 active" data-toggle="tab" data-target="#chair">Chair </li>
-                        <li class="product__tab--btn__list style2" data-toggle="tatabb" data-target="#sofa">Sofa </li>
-                        <li class="product__tab--btn__list style2" data-toggle="" data-target="#lamp">Lamp </li>
-                        <li class="product__tab--btn__list style2" data-toggle="tab" data-target="#table">Table </li>
-                        <li class="product__tab--btn__list style2" data-toggle="tab" data-target="#monitor">Monitor </li>
+                        {% for category in categories %}
+                        <li class="product__tab--btn__list style2 active" data-toggle="tab" data-target="#chair">{{category.title}} </li>
+                        {% endfor %}
                     </ul>
                 </div>
                 <div class="tab_content">
