@@ -33,7 +33,7 @@
                     {% for one in one_random_product %}
                     <div class="col-lg-3 banner2__col--3">
                         <div class="banner__sidebar--two banner__items banner__sidebar2">
-                            <a class="banner__items--thumbnail position__relative" href="{% url 'product_detail' one.id %}"><img class="banner__items--thumbnail__img banner__sidebar2--img" src="{{ one.main_product_image.url }}" alt="banner-img">
+                            <a class="banner__items--thumbnail position__relative" href="{% url 'product_detail' one.slug %}"><img class="banner__items--thumbnail__img banner__sidebar2--img" src="{{ one.main_product_image.url }}" alt="banner-img">
                                 <!-- <div class="banner__content--style2 banner__sidebar2--content"> -->
                                     <h3 class="banner__content--style2__subtitle">{{ one.category }}</h3>
                                     <h2 class="banner__content--style2--title">{{ one.title }} </h2>
@@ -222,11 +222,11 @@
                             <div class="banner__discount--content">
                                 <h3 class="banner__discount--content__subtitle">{{ home.title }}</h3>
                                 <h2 class="banner__discount--content__title">
-                                    Top quality laptops</h2>
-                                <p class="banner__discount--content__desc"> High-performance devices for working from home or gaming on the go.
-                                    The best laptop is the one that does what you need it to, and now, in 2022, 
-                                    you have the widest ever selection of brands, styles, prices and form factors to choose from.</p>
-                                <a class=" primary__btn btn__style2" href="" rel="nofollow">Discover More</a>    
+                                    Ноутбуки высшего качества</h2>
+                                <p class="banner__discount--content__desc"> Высокопроизводительные устройства для работы из дома или игр в пути.
+                                    Лучший ноутбук — тот, который делает то, что вам нужно, и сейчас, в 2022 году,
+                                    у вас есть самый широкий выбор брендов, стилей, цен и форм-факторов на выбор.</p>
+                                <a class=" primary__btn btn__style2" href="{% url 'index' %}" rel="nofollow">Открой для себя больше</a>    
                             </div>
                             <!-- <div class="banner2__right--sidebar position__relative d-flex"> -->
                                 <!-- <div class="banner2__sidebar--items one position__relative">
@@ -465,7 +465,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -563,7 +563,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -658,7 +658,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -756,7 +756,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -851,7 +851,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -950,7 +950,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -1045,7 +1045,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -1143,7 +1143,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -1244,7 +1244,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -1342,7 +1342,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -1441,7 +1441,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -1536,7 +1536,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -1634,7 +1634,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -1729,7 +1729,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -1827,7 +1827,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -1922,7 +1922,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -2026,7 +2026,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -2121,7 +2121,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -2219,7 +2219,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -2318,7 +2318,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -2413,7 +2413,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -2508,7 +2508,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -2606,7 +2606,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -2701,7 +2701,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -2805,7 +2805,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -2900,7 +2900,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -2999,7 +2999,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -3094,7 +3094,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -3192,7 +3192,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -3287,7 +3287,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -3385,7 +3385,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -3480,7 +3480,7 @@
                                                 <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                     <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                 </svg>
-                                                <span class="add__to--cart__text"> Add to cart</span>
+                                                <span class="add__to--cart__text"> Добавить в корзину</span>
                                             </a>
                                         </div>
                                     </div>
@@ -3630,7 +3630,7 @@
                                                     <svg class="product__items--action__cart--btn__icon" xmlns="http://www.w3.org/2000/svg" width="13.897" height="14.565" viewBox="0 0 18.897 21.565">
                                                         <path  d="M16.84,8.082V6.091a4.725,4.725,0,1,0-9.449,0v4.725a.675.675,0,0,0,1.35,0V9.432h5.4V8.082h-5.4V6.091a3.375,3.375,0,0,1,6.75,0v4.691a.675.675,0,1,0,1.35,0V9.433h3.374V21.581H4.017V9.432H6.041V8.082H2.667V21.641a1.289,1.289,0,0,0,1.289,1.29h16.32a1.289,1.289,0,0,0,1.289-1.29V8.082Z" transform="translate(-2.667 -1.366)" fill="currentColor"></path>
                                                     </svg>
-                                                    <span class="add__to--cart__text"> Add to cart</span>
+                                                    <span class="add__to--cart__text"> Добавить в корзину</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -3950,7 +3950,7 @@
                                             </label>
                                             <button type="button" class="quantity__value quickview__value--quantity increase" aria-label="quantity value" value="Increase Value">+</button>
                                         </div>
-                                        <button class="primary__btn quickview__cart--btn" type="submit">Add To Cart</button>  
+                                        <button class="primary__btn quickview__cart--btn" type="submit">Добавить в корзину</button>  
                                     </div>
                                     <div class="quickview__variant--list variant__wishlist mb-15">
                                         <a class="variant__wishlist--icon" href="wishlist.html" title="Add to wishlist">
