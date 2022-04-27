@@ -7,8 +7,8 @@ from apps.products.forms import ProductCreateForm, ProductUpdateForm, EmailPostF
 from django.core.mail import send_mail
 
 # Create your views here.
-def product_detail(request, id):
-    product = Product.objects.get(id = id)
+def product_detail(request, slug):
+    product = Product.objects.get(slug = slug)
     random_products = Product.objects.all().order_by('?')[:20]
     home = Setting.objects.latest('id')
     categories = Category.objects.all().order_by('?')[:5]
@@ -22,7 +22,7 @@ def product_detail(request, id):
         id = request.POST.get('post_id')
         message = request.POST.get('comment_message')
         comment = ProductComment.objects.create(message=message, product=product, user=request.user)
-        return redirect('product_detail', product.id)
+        return redirect('product_detail', product.slug)
 
 
     context = {
@@ -55,12 +55,12 @@ def product_create(request):
     }
     return render(request, 'products/create.html', context)
 
-def product_update(request, id):
-    product = Product.objects.get(id = id)
+def product_update(request, slug):
+    product = Product.objects.get(slug = slug)
     form = ProductUpdateForm(request.POST or None, instance=product)
     if form.is_valid():
         form.save()
-        return redirect('product_detail', product.id)
+        return redirect('product_detail', product.slug)
     context = {
         'form' : form
     }

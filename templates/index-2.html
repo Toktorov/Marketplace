@@ -174,7 +174,7 @@
                     {% for product in one_random_product %}
                     <div class="col-lg-6 col-md-6 banner2__col--6 mb-28">
                         <div class="banner__items position__relative">
-                            <a class="banner__items--thumbnail" href="{% url 'product_detail' product.id %}"><img class="banner__items--thumbnail__img" src="{{ product.main_product_image.url }}" alt="banner-img">
+                            <a class="banner__items--thumbnail" href="{% url 'product_detail' product.slug %}"><img class="banner__items--thumbnail__img" src="{{ product.main_product_image.url }}" alt="banner-img">
                                 <!-- <div class="banner__content--style2"> -->
                                     <h3 class="banner__content--style2__subtitle">{{ product.category }}</h3>
                                     <h2 class="banner__content--style2--title">{{ product.title }}<br>{{ product.price }}</h2>
@@ -187,7 +187,7 @@
                     <div class="col-lg-6 col-md-6 banner2__col--6r mb-28">
                         {% for product in two_random_product %}
                         <div class="banner__items position__relative mb-25">
-                            <a class="banner__items--thumbnail " href="{% url 'product_detail' product.id %}"><img class="banner__items--thumbnail__img banner__img--height" src="{{ product.main_product_image.url }}" alt="banner-img">
+                            <a class="banner__items--thumbnail " href="{% url 'product_detail' product.slug %}"><img class="banner__items--thumbnail__img banner__img--height" src="{{ product.main_product_image.url }}" alt="banner-img">
                             <!-- <div class="banner__content--style2"> -->
                                 <h3 class="banner__content--style2__subtitle text-ofblack d-md-none">{{ product.category }}</h3>
                                 <h2 class="banner__content--style2--title text-ofblack">{{ product.title }}<br>{{ product.price }}</h2>
@@ -198,7 +198,7 @@
                         {% endfor %}
                         {% for product in three_random_product %}
                         <div class="banner__items position__relative">
-                            <a class="banner__items--thumbnail " href="{% url 'product_detail' product.id %}"><img class="banner__items--thumbnail__img banner__img--height" src="{{ product.main_product_image.url }}" alt="banner-img">
+                            <a class="banner__items--thumbnail " href="{% url 'product_detail' product.slug %}"><img class="banner__items--thumbnail__img banner__img--height" src="{{ product.main_product_image.url }}" alt="banner-img">
                                 <!-- <div class="banner__content--style2"> -->
                                     <h3 class="banner__content--style2__subtitle text-ofblack d-md-none">{{ product.category }}</h3>
                                     <h2 class="banner__content--style2--title text-ofblack">{{ product.title }}<br>{{ product.price }}</h2>
@@ -237,7 +237,7 @@
                                 </div> -->
                                 {% for product in expensive_products %}
                                 <div class="banner2__sidebar--items two position__relative">
-                                    <a class="banner__items--thumbnail " href="{% url 'product_detail' product.id %}" rel="nofollow"><img class="banner__items--thumbnail__img" src="{{ product.main_product_image.url }}" width="250px" alt="banner-img"></a>
+                                    <a class="banner__items--thumbnail " href="{% url 'product_detail' product.slug %}" rel="nofollow"><img class="banner__items--thumbnail__img" src="{{ product.main_product_image.url }}" width="250px" alt="banner-img"></a>
                                 </div>
                                 {% endfor %}
                                 <!-- <div class="banner2__sidebar--items three position__relative">
@@ -272,7 +272,7 @@
                                 <div class="col mb-30">
                                     <div class="product__items ">
                                         <div class="product__items--thumbnail">
-                                            <a class="product__items--link" href="{% url 'product_detail' product.id %}">
+                                            <a class="product__items--link" href="{% url 'product_detail' product.slug %}">
                                                 <img class="product__items--img product__primary--img" src="{{ product.main_product_image.url }}" alt="product-img">
                                                 <img class="product__items--img product__secondary--img" src="{{ product.main_product_image.url }}" alt="product-img">
                                             </a>
@@ -281,7 +281,7 @@
                                             </div>
                                             <ul class="product__items--action style2">
                                                 <li class="product__items--action__list style2">
-                                                    <a class="product__items--action__btn style2" data-open="modal1" href="{% url 'product_detail' product.id %}">
+                                                    <a class="product__items--action__btn style2" data-open="modal1" href="{% url 'product_detail' product.slug %}">
                                                         <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg"  width="20.51" height="19.443" viewBox="0 0 512 512"><path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><circle cx="256" cy="256" r="80" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg>
                                                         <span class="visually-hidden">Quick View</span>
                                                     </a>
@@ -316,7 +316,7 @@
                                                 </ul>
                                             </div>
                                             <a class="product__items--content__tag" href="product-details.html">{{ product.category }}</a>
-                                            <h3 class="product__items--content__title h4"><a href="{% url 'product_detail' product.id %}">{{ product.title |truncatewords:6}}</a></h3>
+                                            <h3 class="product__items--content__title h4"><a href="{% url 'product_detail' product.slug %}">{{ product.title |truncatewords:6}}</a></h3>
                                             <div class="product__items--price">
                                                 <span class="current__price">{{ product.price }} сом</span>
                                                 <span class="old__price">{{ product.old_price }} сом</span>
@@ -3526,7 +3526,7 @@
                         {% for product in one_random_product %}
                         <div class="col-lg-5 col-md-8 col-md-order offset-md-2 offset-lg-0">
                             <div class="banner__items position__relative">
-                                <a class="banner__items--thumbnail" href="{% url 'product_detail' product.id %}"><img class="banner__items--thumbnail__img" src="{{ product.main_product_image.url }}" alt="banner-img">
+                                <a class="banner__items--thumbnail" href="{% url 'product_detail' product.slug %}"><img class="banner__items--thumbnail__img" src="{{ product.main_product_image.url }}" alt="banner-img">
                                     <!-- <div class="banner__content--style2"> -->
                                         <h3 class="banner__content--style2__subtitle">{{ product.category }}</h3>
                                         <h2 class="banner__content--style2--title">{{ product.title }}<br>{{ product.price }}</h2>
@@ -3543,13 +3543,13 @@
                                     <div class="swiper-slide">
                                         <div class="product__items ">
                                             <div class="product__items--thumbnail">
-                                                <a class="product__items--link" href="{% url 'product_detail' product.id %}">
+                                                <a class="product__items--link" href="{% url 'product_detail' product.slug %}">
                                                     <img class="product__items--img product__primary--img" src="{{ product.main_product_image.url }}" alt="product-img">
                                                     <img class="product__items--img product__secondary--img" src="{{ product.main_product_image.url }}" alt="product-img">
                                                 </a>
                                                 <ul class="product__items--action style2">
                                                     <li class="product__items--action__list style2">
-                                                        <a class="product__items--action__btn style2" data-open="modal1" href="{% url 'product_detail' product.id %}">
+                                                        <a class="product__items--action__btn style2" data-open="modal1" href="{% url 'product_detail' product.slug %}">
                                                             <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg"  width="20.51" height="19.443" viewBox="0 0 512 512"><path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><circle cx="256" cy="256" r="80" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg>
                                                             <span class="visually-hidden">Quick View</span>
                                                         </a>
@@ -3584,7 +3584,7 @@
                                                     </ul>
                                                 </div>
                                                 <a class="product__items--content__tag" href="product-details.html">{{ product.category }}</a>
-                                                <h3 class="product__items--content__title h4"><a href="{% url 'product_detail' product.id %}    ">{{ product.title }}</a></h3>
+                                                <h3 class="product__items--content__title h4"><a href="{% url 'product_detail' product.slug %}    ">{{ product.title }}</a></h3>
                                                 <div class="product__items--price">
                                                     <span class="current__price">{{ product.price }} сом </span>
                                                     <span class="old__price">{{ product.old_price }} сом</span>

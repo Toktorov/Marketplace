@@ -397,7 +397,7 @@
                                         <ul class="widget__categories--sub__menu">
                                             {% for product in category.product_category.all %}
                                             <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="{% url 'product_detail' product.id %}">
+                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="{% url 'product_detail' product.slug %}">
                                                     <img class="widget__categories--sub__menu--img" src="{{ product.main_product_image.url }}" alt="categories-img">
                                                     <p class="widget__categories--sub__menu--text" style = "font-size: 13px;">{{ product.title }}</p>
                                                 </a>
@@ -625,7 +625,7 @@
                                             <div class="col mb-30">
                                                 <div class="product__items ">
                                                     <div class="product__items--thumbnail">
-                                                        <a class="product__items--link" href="{% url 'product_detail' product.id %}">
+                                                        <a class="product__items--link" href="{% url 'product_detail' product.slug %}">
                                                             <img class="product__items--img product__primary--img" src="{{ product.main_product_image.url }}" alt="product-img">
                                                             <img class="product__items--img product__secondary--img" src="{{ product.main_product_image.url }}" alt="product-img">
                                                         </a>
@@ -634,7 +634,7 @@
                                                         </div>
                                                         <ul class="product__items--action d-flex justify-content-center">
                                                             <li class="product__items--action__list">
-                                                                <a class="product__items--action__btn" data-open="modal1" href="{% url 'product_detail' product.id %}">
+                                                                <a class="product__items--action__btn" data-open="modal1" href="{% url 'product_detail' product.slug %}">
                                                                     <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg"  width="20.51" height="19.443" viewBox="0 0 512 512"><path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><circle cx="256" cy="256" r="80" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg>
                                                                     <span class="visually-hidden">Quick View</span>
                                                                 </a>
@@ -668,7 +668,7 @@
                                                                 <li class="product__items--color__list"><a class="product__items--color__link four" href="javascript:void(0)"><span class="visually-hidden">Color 4</span></a></li>
                                                             </ul>
                                                         </div>
-                                                        <h3 class="product__items--content__title h4"><a href="{% url 'product_detail' product.id %}">{{ product.title }}</a></h3>
+                                                        <h3 class="product__items--content__title h4"><a href="{% url 'product_detail' product.slug %}">{{ product.title }}</a></h3>
                                                         <div class="product__items--price">
                                                             <span class="current__price">{{ product.price }} сом</span>
                                                             <span class="old__price">{{ product.old_price }} сом</span>
