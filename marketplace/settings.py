@@ -53,6 +53,9 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google', # for Google OAuth 2.0
+
+    #django rest
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -66,6 +69,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'marketplace.urls'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES':[
+        'rest_framework.permissions.AllowAny',
+    ],
+}
 
 TEMPLATES = [
     {
